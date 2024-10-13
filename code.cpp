@@ -1,6 +1,4 @@
 #include <iostream>
-#include <string>
-
 
 int main () {
 
@@ -20,6 +18,8 @@ std::cout << "--------------------------------------- \n" ;
 int userScore ;
 int botScore ;
 
+srand (time(NULL)) ;
+
 for (int i = 0 ; roundCount > i ; i++) {
 
 
@@ -32,7 +32,6 @@ std::cout << "3. Scissors \n" ;
     std::cout << "Chose Your Move : " ;
     std::cin >> userMove ;
 
-srand ( time ( NULL ) ) ;
 int botMove = ( rand() % 3 ) + 1 ;
 // std::cout << botMove << std::endl ;
 
@@ -40,19 +39,19 @@ int botMove = ( rand() % 3 ) + 1 ;
 
 if ( userMove == 1 && botMove == 2){
 
-    std::cout << "Bot Wins This Round \n" ;
+    std::cout << "Bot Wins This Round : " << botMove << std::endl << std::endl ;
     botScore++ ;
 
 }
 else if (userMove == 1 && botMove == 3) {
 
-    std::cout << "You Won This Round \n" ;
+    std::cout << "You Won This Round \n \n" ;
     userScore++ ;
 
 }
 else if (userMove == 1 && botMove == 1) {
 
-std::cout << "Both Got The Same, Tie ! \n" ;
+std::cout << "Both Got The Same, Tie ! \n \n" ;
 
 }
 
@@ -60,20 +59,20 @@ std::cout << "Both Got The Same, Tie ! \n" ;
 
 if (userMove == 2 && botMove == 1) {
 
-std::cout << "You Won This Round \n" ;
+std::cout << "You Won This Round \n \n" ;
 userScore++;
     }
 
 else if ( userMove == 2 && botMove == 3 ) {
 
-std::cout << "Bot Wins This Round \n" ;
+std::cout << "Bot Wins This Round : "<< botMove << std::endl << std::endl ;
 botScore++ ;
 
 }
 
 else if ( userMove == 2 && botMove ==2 ) {
 
-std::cout << "Bot Got The Same, Tie ! \n" ;
+std::cout << "Both Got The Same, Tie ! \n \n" ;
 
 }
 
@@ -81,42 +80,45 @@ std::cout << "Bot Got The Same, Tie ! \n" ;
 
 if(userMove == 3 && botMove == 1){
 
-std::cout << "Bot Wins This Round \n" ;
+std::cout << "Bot Wins This Round : " << botMove << std::endl << std::endl;
 botScore++ ;
 
 }
 
 else if (userMove == 3 && botMove == 2) {
 
-std::cout << "You Won This Round \n" ;
+std::cout << "You Won This Round \n \n" ;
 userScore ++ ;
 
 }
 
 else if (userMove == 3 && botMove == 3) {
 
-std::cout << "Both Got The Same, Tie ! \n" ;
+std::cout << "Both Got The Same, Tie ! \n \n" ;
 
 }
 
 
 }
+
+botScore =  botScore - 8;
 
 if (userScore > botScore) {
 
-std::cout << "YOU WON THE GAME !!! \n" ;
+std::cout << " \n \nYOU WON THE GAME !!! \n" ;
+std::cout << "You : " << userScore << " Bot : " << botScore ;
 
 }
 
-else if (botScore > userScore) {
+else if (userScore < botScore) {
 
-std::cout << "YOU LOST !!! \n" ;
-
+std::cout << "\n \nYOU LOST !!! \n" ;
+std::cout << "You : " << userScore << " | " << "Bot : " << botScore ;
 }
 
 else if (userScore == botScore){
 
-std::cout << "IT'S A TIE ! \n" ;
+std::cout << "\nIT'S A TIE ! \n" ;
 
 }
 
