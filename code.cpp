@@ -1,4 +1,6 @@
 #include <iostream>
+#include <stdlib.h>
+#include <cmath>
 
 int main () {
 
@@ -105,14 +107,14 @@ if ( userMove == 3 && botMove == 1 ) { //scissors and rock
 
 botScore =  botScore - 8;
 
-if ( userScore > botScore ) {
+if ( userScore > abs(botScore) ) {
 
 std::cout << " \n \nYOU WON THE GAME !!! \n" ;
 std::cout << "You : " << userScore << " Bot : " << botScore ;
 
 }
 
-else if ( userScore < botScore ) {
+else if ( userScore < abs(botScore) ) {
 
 std::cout << "\n \nYOU LOST !!! \n" ;
 std::cout << "You : " << userScore << " | " << "Bot : " << botScore ;
